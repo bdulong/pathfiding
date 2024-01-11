@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     let cells = document.querySelectorAll('.checkerboard .cell');
 
     // Créer une balise img pour l'image de départ

@@ -65,3 +65,7 @@ img {
 .cell.wall:hover {
     background-color: grey;
 }
+
+.path {
+    background-color: yellow;
+}
