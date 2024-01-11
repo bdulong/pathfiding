@@ -30,6 +30,10 @@ span {
     cursor: pointer;
 }
 
+span:hover {
+    background-color: gray;
+}
+
 img {
     width: calc(1.02vw + 1.02vh);
     height: calc(1.02vw + 1.02vh);

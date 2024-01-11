@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         for (let j = 0; j < 28; j++) {
             let cell = document.createElement('div');
             cell.classList.add('cell');
+            cell.id = 'cell-' + i + '-' + j;
             row.appendChild(cell);
         }
         checkerboard.appendChild(row);
