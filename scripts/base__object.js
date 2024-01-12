@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             let droppedItem = event.dataTransfer.getData('text/plain');
             if (droppedItem === 'start') {
+                logCoordinatesChange(this, droppedItem);
                 // Supprimer l'image de départ de la cellule précédente
                 let previousCell = document.querySelector('.start');
                 if (previousCell) {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.classList.add('start');
                 
             } else if (droppedItem === 'end') {
+                logCoordinatesChange(this, droppedItem);
                 // Supprimer l'image de fin de la cellule précédente
                 let previousCell = document.querySelector('.end');
                 if (previousCell) {
@@ -68,4 +70,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    window.onload = function() {
+        let cellStart = document.querySelector('.start');
+        let cellEnd = document.querySelector('.end');
+    
+        if (cellStart) {
+            logCoordinatesChange(cellStart, 'start');
+        }
+    
+        if (cellEnd) {
+            logCoordinatesChange(cellEnd, 'end');
+        }
+    }
+
+    function logCoordinatesChange(cell, droppedItem) {
+        let cellId = cell.id; // L'ID de la cellule est sous la forme 'cell-x-y'
+        let coordinates = cellId.split('-').slice(1); // Extraire les coordonnées x et y de l'ID
+
+        if (droppedItem === 'start') {
+            console.log(`Position de départ : ${coordinates}`);
+        } else if (droppedItem === 'end') {
+            console.log(`Position de fin : ${coordinates}`);
+        }
+    }
 });

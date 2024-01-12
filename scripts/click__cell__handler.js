@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDrawing = false;
     let isErasing = false;
     let isDraggingStart = false;
-    let isDraggingEnd = false; // Ajouter cette ligne
+    let isDraggingEnd = false;
 
     let imgStart = document.querySelector('.start img');
-    let imgEnd = document.querySelector('.end img'); // Ajouter cette ligne
+    let imgEnd = document.querySelector('.end img');
 
     if (imgStart) {
         imgStart.addEventListener('dragstart', function(event) {
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         imgStart.addEventListener('dragend', function() {
             isDraggingStart = false;
-            isDrawing = false; // Ajouter cette ligne
+            isDrawing = false;
         });
     }
 
-    if (imgEnd) { // Ajouter ce bloc
+    if (imgEnd) {
         imgEnd.addEventListener('dragstart', function(event) {
             event.dataTransfer.setData('text/plain', 'end');
             isDraggingEnd = true;
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cell.addEventListener('dragover', function(event) {
-            event.preventDefault(); // Permettre le dépôt
+            event.preventDefault();
         });
 
         cell.addEventListener('drop', function(event) {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (droppedItem === 'start') {
                 this.classList.remove('wall');
                 this.classList.add('start');
-            } else if (droppedItem === 'end') { // Ajouter ce bloc
+            } else if (droppedItem === 'end') {
                 this.classList.remove('wall');
                 this.classList.add('end');
             }
