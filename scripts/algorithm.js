@@ -115,8 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return path;
     }
 
-    let start = window.grid[0][0];
-    let end = window.grid[window.grid.length - 1][window.grid[0].length - 1];
+    // let start = window.grid[0][0];
+    let start = window.grid[5][6];
+    // let end = window.grid[window.grid.length - 1][window.grid[0].length - 1];
+    let end = window.grid[8][21];
 
     let path = dijkstra(window.grid, start, end);
     for (let cell of path) {
