@@ -71,19 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.onload = function() {
-        let cellStart = document.querySelector('.start');
-        let cellEnd = document.querySelector('.end');
-    
-        if (cellStart) {
-            logCoordinatesChange(cellStart, 'start');
-        }
-    
-        if (cellEnd) {
-            logCoordinatesChange(cellEnd, 'end');
-        }
-    }
-
     function logCoordinatesChange(cell, droppedItem) {
         let cellId = cell.id; // L'ID de la cellule est sous la forme 'cell-x-y'
         let coordinates = cellId.split('-').slice(1); // Extraire les coordonnées x et y de l'ID
